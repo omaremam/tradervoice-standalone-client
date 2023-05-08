@@ -1,0 +1,18 @@
+.cartesian-chart {
+  position: absolute; /* This seems necessary when utilizing MUI breakpoints. */
+}
+
+.plot-area {
+  background: url("../../../gfx/logo-watermark.svg") center no-repeat;
+  background-size: min(400px, 100%);
+}
+
+.x-axis path,
+.y-axis path {
+  stroke: currentColor;
+}
+
+.x-axis text,
+.y-axis text {
+  fill: currentColor;
+}
