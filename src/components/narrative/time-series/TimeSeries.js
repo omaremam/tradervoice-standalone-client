@@ -12,6 +12,8 @@ import Chart from './Chart';
 import SearchInput from './SearchInput';
 import Intro from '../../Intro';
 import Summary from './Summary';
+import TimeSeriesHeader from './time-series-header';
+import MainStock from './main-stock';
 
 const TimeSeries = () => {
   const theme = useTheme();
@@ -52,6 +54,9 @@ const TimeSeries = () => {
   }
 
   return (
+    <>
+    <TimeSeriesHeader/>
+    <MainStock/>
     <Grid container direction="row" justifyContent="space-between">
       <Grid container direction="column" item sm={12} md={9}>
         <Grid container item minHeight={750} flexDirection="column">
@@ -97,6 +102,7 @@ const TimeSeries = () => {
         <Symbols onTimeSeries={setSymbolTimeSeries}/>
       </Grid>
     </Grid>
+    </>
   );
 };
 

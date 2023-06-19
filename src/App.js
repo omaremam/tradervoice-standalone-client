@@ -12,7 +12,7 @@ import {createTheme, ThemeProvider} from '@mui/material/styles';
 
 const theme = createTheme({
   palette: {
-    mode: 'dark'
+    mode: 'light'
   }
 });
 
@@ -21,7 +21,6 @@ export default function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline/>
       <Stack height="100%">
-        <Header/>
         <Container component="main" maxWidth={false} sx={{flexGrow: 1}}>
           <Outlet/>
         </Container>
