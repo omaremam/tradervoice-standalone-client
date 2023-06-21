@@ -1,0 +1,21 @@
+.tools{
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    height: 50vh;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+img{
+    cursor: pointer;
+}
+
+.custom-cursor-cross {
+    cursor: url("../../../gfx/cross.svg"), auto;
+  }
+
+  .custom-cursor-line{
+    cursor: url("../../../gfx/trendline.svg");
+  }
+  

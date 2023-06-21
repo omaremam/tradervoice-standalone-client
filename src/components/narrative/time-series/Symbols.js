@@ -52,6 +52,13 @@ const Symbols = ({onTimeSeries}) => {
     }
   }, [onTimeSeries, selectedSymbol]);
 
+
+  React.useEffect(() => {
+    api.symbol("^DJI")
+    .then(timeSeries => onTimeSeries(timeSeries))
+    .catch(() => setSelectedSymbol(undefined));
+  }, [])
+
   React.useMemo(() => {
     setFilteredSymbols(filter.length > 0
       ? symbols.filter(s => s.symbol === selectedSymbol || s.filterables.some(filterable => filterable.includes(filter)))

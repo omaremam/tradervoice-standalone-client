@@ -12,6 +12,7 @@ import AddIcon from '@mui/icons-material/Add';
 import * as api from '../../../fake-backend/api';
 import {useSearchParams} from 'react-router-dom';
 import SearchEntry from './SearchEntry';
+import NarrativeCard from "./narrative-card"
 
 const SearchInput = ({onTimeSeries}) => {
   const theme = useTheme();
@@ -173,7 +174,7 @@ const SearchInput = ({onTimeSeries}) => {
       <Stack
         direction="row"
         sx={{
-          alignItems: 'flex-start',
+          alignItems: 'center',
           justifyContent: 'flex-start',
           flexWrap: 'wrap',
           listStyle: 'none',
@@ -184,14 +185,7 @@ const SearchInput = ({onTimeSeries}) => {
         component="ol"
       >
         {searches.map(search => (
-          <SearchEntry
-            key={search.color}
-            component="li"
-            search={{...search, state: editId === search.color ? 'editing' : (search.state === 'init' ? 'loading' : search.state)}}
-            onEdit={() => handleBeginEdit(search.color)}
-            onDelete={() => handleDelete(search.color)}
-            sx={{m: 1}}
-          />
+         <NarrativeCard data={search}/>
         ))}
         {searches.length > 0 && searches.length < MAX_ENTRIES &&
           <IconButton color="primary" size="large" sx={{mt: 1}} onClick={() => handleBeginEdit(null)}>

@@ -2,6 +2,7 @@ import * as React from "react";
 import "./time-series-header.css";
 import logo from "../../../gfx/small-logo.svg"
 import bookmark from "../../../gfx/bookmark.svg"
+import bookmarkGreen from "../../../gfx/bookmarkGreen.svg"
 import theme from "../../../gfx/theme-icon.svg"
 import arrowDown from "../../../gfx/arrow-down.svg"
 import arrowUp from "../../../gfx/arrow-up.svg"
@@ -13,7 +14,10 @@ function TimeSeriesHeader(props) {
     name: "SVB Financial Group (SIVBQ)",
   });
 
+  const [isBookmarked, setIsBookmarked] = React.useState(false)
+
   const [narratives, setNarratives] = React.useState([]);
+
 
   return (
     <>
@@ -32,7 +36,13 @@ function TimeSeriesHeader(props) {
           </div>
         </div>
         <div className="header-right">
-            <img src={bookmark}></img>
+          {console.log(isBookmarked)}
+          {isBookmarked? <img style={ isBookmarked?{fill:  "green"} : {fill: "white"}} onClick={() => {
+              setIsBookmarked(!isBookmarked)
+            }} src={bookmarkGreen}></img> : <img style={ isBookmarked?{fill:  "green"} : {fill: "white"}} onClick={() => {
+              setIsBookmarked(!isBookmarked)
+            }} src={bookmark}></img>}
+           
             <img src={theme}></img>
 
 
